@@ -30,6 +30,8 @@ class ConsultationsController < ApplicationController
   end
 
   def edit
+    @doctors = Doctor.all
+    @patients = Patient.all
     @consultation = Consultation.find(params[:id])
   end
 

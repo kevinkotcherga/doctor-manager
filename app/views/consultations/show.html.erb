@@ -3,7 +3,7 @@
     <div class="col-12 col-md-6 offset-lg-3">
       <div class="bg-white rounded p-3 shadow">
         <h1><%= @consultation.name %></h1>
-        <p><%= @consultation.doctor.last_name %> and <%= @consultation.patient.last_name %> </p>
+        <p>Consultation between Doctor <%= @consultation.doctor.last_name %> (<%= @consultation.doctor.speciality %>) and the patient <%= @consultation.patient.last_name %>. </p>
         <%= link_to "Supprimer", consultation_path(@consultation), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger m-1' %>
         <%= link_to 'Edit', edit_consultation_path, class: 'btn btn-secondary m-1' %>
         <%= link_to 'Back', root_path, class: 'btn btn-primary m-1' %>
