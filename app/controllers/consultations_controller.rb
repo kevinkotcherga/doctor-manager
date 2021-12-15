@@ -22,6 +22,24 @@ class ConsultationsController < ApplicationController
     end
   end
 
+  def destroy
+    @consultation = Consultation.find(params[:id])
+    @consultation.destroy
+
+    redirect_to root_path
+  end
+
+  def edit
+    @consultation = Consultation.find(params[:id])
+  end
+
+  def update
+    @consultation = Consultation.find(params[:id])
+    @consultation.update(consultation_params)
+
+    redirect_to consultation_path(@consultation)
+  end
+
   private
 
   def consultation_params

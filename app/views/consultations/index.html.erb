@@ -1,15 +1,21 @@
-<h1>Doctor manager</h1>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h1>Doctor manager</h1>
 
-<div class="row">
-    <% @consultations.each do |consultation| %>
-      <div class="co-12 col-sm-6 col-md-4">
-        <%= link_to consultation_path(consultation), class: "text-decoration-none" do %>
-          <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)) %>)">
-            <%= consultation.name %>
+        <div class="row">
+            <% @consultations.each do |consultation| %>
+              <div class="co-12 col-sm-4 col-md-2">
+                <%= link_to consultation_path(consultation), class: "btn btn-primary m-1" do %>
+                    <%= consultation.name %>
+                <% end %>
+              </div>
+            <% end %>
           </div>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
 
- <%= link_to "New consultation", new_consultation_path %>
+        <%= link_to "New consultation", new_consultation_path, class: "btn btn-info m-1" %>
+      </div>
+    </div>
+  </div>
+</div>

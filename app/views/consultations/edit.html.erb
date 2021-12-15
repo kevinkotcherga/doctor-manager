@@ -1,0 +1,7 @@
+<h1>Edit your consultation</h1>
+<%= simple_form_for @consultation do |f| %>
+  <%= f.input :name, placeholder: 'Henri Dupont' %>
+  <%= f.association :doctor, collection: @doctors, :label_method => :last_name, :value_method => :id, :include_blank => false, prompt: "Select a doctor", input_html: { data: { controller: "slect2" } } %>
+  <%= f.association :patient, collection: @patients, :label_method => :last_name, :value_method => :id, :include_blank => false, prompt: "Select a patient", input_html: { data: { controller: "slect2" } } %>
+  <%= f.submit class: 'btn btn-flat' %>
+<% end %>
