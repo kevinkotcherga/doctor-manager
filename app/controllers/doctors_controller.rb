@@ -6,7 +6,7 @@ class DoctorsController < ApplicationController
   def create
     @doctor = Doctor.new(doctor_params)
     if @doctor.save
-      redirect_to consultations_path(@consultation)
+      redirect_to new_consultation_path(@consultation)
     else
       render :new
     end
