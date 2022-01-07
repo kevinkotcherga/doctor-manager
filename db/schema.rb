@@ -13,34 +13,34 @@
 ActiveRecord::Schema.define(version: 2021_12_15_095804) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "consultations", force: :cascade do |t|
-    t.bigint "doctor_id", null: false
-    t.bigint "patient_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "name"
-    t.index ["doctor_id"], name: "index_consultations_on_doctor_id"
-    t.index ["patient_id"], name: "index_consultations_on_patient_id"
+  create_table 'consultations', force: :cascade do |t|
+    t.bigint 'doctor_id', null: false
+    t.bigint 'patient_id', null: false
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.string 'name'
+    t.index ['doctor_id'], name: 'index_consultations_on_doctor_id'
+    t.index ['patient_id'], name: 'index_consultations_on_patient_id'
   end
 
-  create_table "doctors", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "speciality"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table 'doctors', force: :cascade do |t|
+    t.string 'first_name'
+    t.string 'last_name'
+    t.string 'speciality'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
-  create_table "patients", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.integer "social_security_number"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table 'patients', force: :cascade do |t|
+    t.string 'first_name'
+    t.string 'last_name'
+    t.integer 'social_security_number'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
-  add_foreign_key "consultations", "doctors"
-  add_foreign_key "consultations", "patients"
+  add_foreign_key 'consultations', 'doctors'
+  add_foreign_key 'consultations', 'patients'
 end
