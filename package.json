@@ -1,6 +1,9 @@
 {
   "name": "doctor_manager",
   "private": true,
+  "engines": {
+    "node": "14.x"
+  },
   "dependencies": {
     "@popperjs/core": "^2.11.0",
     "@rails/actioncable": "^6.0.0",
